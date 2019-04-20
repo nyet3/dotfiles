@@ -42,7 +42,6 @@ set number
 
 " 5. syntax, highlighting and spelling
 set background=dark
-set syntax=ON
 set hlsearch
 
 " 6. multiple windows
