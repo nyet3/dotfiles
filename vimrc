@@ -1,13 +1,32 @@
-inoremap <silent> jj <ESC>
-
-let g:NERDTreeShowBookmarks=1
-let g:NERDTreeShowHidden = 1
-let g:nerdtree_tabs_open_on_console_startup=1
-
+""""""""""""""""""""
+" NERDTree
+" https://github.com/scrooloose/nerdtree
+""""""""""""""""""""
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-":options
+" 3.1. Customisation summary
+let g:NERDTreeNaturalSort=1
+let g:NERDTreeSortHiddenFirst=0
+let g:NERDTreeChDirMode=2
+let g:NERDTreeHighlightCursorline=1
+let g:NERDTreeBookmarksSort=2
+let g:NERDTreeNERDTreeMouseMode=3
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeSortOrder=['\/$', 'docker-compose\.yml', 'Dockerfile', '\.yml$', '\.toml', '\.go$']
+let g:NERDTreeWinSize=31
+
+""""""""""""""""""""
+" vim-nerdtree-tabs
+" https://github.com/jistr/vim-nerdtree-tabs
+""""""""""""""""""""
+let g:nerdtree_tabs_open_on_console_startup=1
+
+""""""""""""""""""""
+" vim
+" :options
+""""""""""""""""""""
 " 1. important
 " 2. moving around, searching and patterns
 set whichwrap=b,s,h,l
@@ -28,7 +47,6 @@ set hlsearch
 
 " 6. multiple windows
 set laststatus=2
-"set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)%O'%02b'
 
 " 7. multiple tab pages
 set showtabline=2
@@ -48,7 +66,7 @@ set belloff=
 set helplang=ja
 
 " 12. selecting text
-set clipboard=unnamed
+set clipboard=unnamed,autoselect
 
 " 13. editing text
 set showmatch
@@ -73,6 +91,11 @@ set wildmenu
 " 23. language specific
 " 24. multi-byte characters
 " 25. various
+
+""""""""""""""""""""
+" map
+""""""""""""""""""""
+inoremap <silent> jj <ESC>
 
 nnoremap j gj
 nnoremap k gk
