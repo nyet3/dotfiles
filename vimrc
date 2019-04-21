@@ -24,6 +24,22 @@ let g:NERDTreeWinSize=31
 let g:nerdtree_tabs_open_on_console_startup=1
 
 """"""""""""""""""""
+" vim-go
+" https://github.com/fatih/vim-go/blob/master/doc/vim-go.txt
+""""""""""""""""""""
+let g:go_auto_type_info = 1
+let g:go_auto_sameids = 1
+let g:go_fmt_autosave = 1
+let g:go_mod_fmt_autosave = 1
+let g:go_snippet_engine = "automatic"
+let g:go_autodetect_gopath = 0
+let g:go_metalinter_autosave = 1 
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_list_autoclose = 1
+let g:go_asmfmt_autosave = 1 
+let g:go_template_autocreate = 1
+
+""""""""""""""""""""
 " vim
 " :options
 """"""""""""""""""""
