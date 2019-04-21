@@ -1,10 +1,5 @@
 #/bin/sh
-
-if [ $# = 0 ]; then
-  target="~/.vim/pack/plugins/start/"
-else
-  target="$1.vim/pack/plugins/start/"
-fi
+target=/usr/share/vim/vimfiles/pack/plugins/start/
 
 echo "Set plugins to $target"
 

@@ -1,12 +1,16 @@
 FROM alpine:latest
 
-RUN apk update && apk add openssh vim go git fish sudo g++
+RUN apk update && apk add --no-cache openssh sudo curl git python3 gcc g++ fish vim go
 
-RUN mkdir /etc/skel/ /go/ /go/bin/ /go/src/ /go/pkg/
+RUN mkdir /etc/skel /go /go/bin /go/src /go/pkg
+RUN chmod 777 /go /go/bin /go/src /go/pkg
+
 COPY install.sh /root/.
-RUN /root/install.sh /etc/skel/
 COPY vimrc /etc/skel/.vimrc
 COPY config.fish /etc/skel/.config/fish/config.fish
+
+RUN pip3 install vim-vint
+RUN /root/install.sh
 
 RUN ssh-keygen -A
 RUN echo PermitRootLogin no >> /etc/ssh/sshd_config
